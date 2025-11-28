@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Prata } from "next/font/google";
 import "./globals.css";
+import Providers from "./Providers";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +14,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const prata = Prata({
+  weight: "400",              // ✅ required
+  subsets: ["latin"],
+  variable: "--font-prata",   // ✅ your custom CSS variable
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased bg-brand-white text-brand-purple`}
       >
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
