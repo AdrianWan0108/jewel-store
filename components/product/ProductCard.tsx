@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/formatPrice";
 
@@ -13,12 +14,14 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group block rounded-xl border border-brand-gold/30 bg-brand-white/60 p-4 shadow-sm transition hover:-translate-y-1 hover:border-brand-gold hover:shadow-md"
     >
       {/* Image */}
-      <div className="aspect-square w-full overflow-hidden rounded-lg bg-brand-purple/5 mb-3">
-        {/* For now plain img – you can switch to next/image later */}
-        <img
+      {/* <div className="relative aspect-square overflow-hidden rounded-xl bg-brand-purple/5"> */}
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-brand-purple/5 mb-3">
+        <Image
           src={product.mainImage}
           alt={product.name}
-          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          fill
+          priority
+          className="object-cover"
         />
       </div>
 

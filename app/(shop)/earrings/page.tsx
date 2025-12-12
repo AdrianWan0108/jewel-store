@@ -10,7 +10,7 @@ export default function EarringsPage() {
         <p className="text-xs uppercase tracking-[0.25em] text-brand-gold">
           Category
         </p>
-        <h1 className="text-3xl font-serif text-brand-purple">Rings</h1>
+        <h1 className="text-3xl font-serif text-brand-purple">Earrings</h1>
         <p className="text-brand-purple/80 text-sm mt-2">
           Explore gemstone earrings designed to sit close to your heart. Soft
           light, intentional color, everyday elegance.

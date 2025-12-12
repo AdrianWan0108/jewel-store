@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import { formatPrice } from "@/lib/formatPrice";
 import type { CartItem as CartItemType } from "@/store/slices/cartSlice";
 import { useAppDispatch } from "@/store/hooks";
@@ -22,11 +21,13 @@ export default function CartItem({ item }: CartItemProps) {
   return (
     <div className="flex gap-4 border-b border-brand-purple/10 py-4">
       {/* Thumb */}
-      <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-brand-purple/5">
-        <img
+      <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-brand-purple/5">
+        <Image
           src={product.mainImage}
           alt={product.name}
-          className="h-full w-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
       </div>
 
@@ -47,7 +48,7 @@ export default function CartItem({ item }: CartItemProps) {
           </div>
 
           <p className="text-xs text-brand-purple/60 mt-1">
-            {product.gemstone && `${product.gemstone} · `} 
+            {product.gemstone && `${product.gemstone} · `}
             {product.metal}
           </p>
         </div>

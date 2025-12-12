@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { products } from "@/lib/products";
 import { formatPrice } from "@/lib/formatPrice";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 
-interface ProductPageProps {
-  params: {
-    slug: string;
-  };
-}
+type ProductPageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-export function generateMetadata(
+export async function generateMetadata(
   { params }: ProductPageProps
-): Metadata {
-  const product = products.find((p) => p.slug === params.slug);
+): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
 
   return {
     title: product
@@ -22,8 +22,9 @@ export function generateMetadata(
   };
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.slug === params.slug);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
@@ -32,16 +33,17 @@ export default function ProductPage({ params }: ProductPageProps) {
   return (
     <main className="max-w-6xl mx-auto px-6 py-12">
       <div className="grid gap-12 md:grid-cols-2">
-        {/* Left: image gallery placeholder */}
+        {/* Left: image */}
         <div className="space-y-4">
-          <div className="aspect-square overflow-hidden rounded-xl bg-brand-purple/5">
-            <img
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-brand-purple/5">
+            <Image
               src={product.mainImage}
               alt={product.name}
-              className="h-full w-full object-cover"
+              fill
+              priority
+              className="object-cover"
             />
           </div>
-          {/* Later: thumbnails */}
         </div>
 
         {/* Right: details */}
