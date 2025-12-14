@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { products } from "@/lib/products";
 import { formatPrice } from "@/lib/formatPrice";
 import AddToCartButton from "@/components/cart/AddToCartButton";
+import ProductImageGallery from "@/components/product/ProductImageGallery";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -26,27 +26,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-12">
       <div className="grid gap-12 md:grid-cols-2">
-        {/* Left: image */}
-        <div className="space-y-4">
-          <div className="relative aspect-square overflow-hidden rounded-xl bg-brand-purple/5">
-            <Image
-              src={product.mainImage}
-              alt={product.name}
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
-        </div>
+        <ProductImageGallery name={product.name} images={product.images} />
 
-        {/* Right: details */}
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.25em] text-brand-gold">
             {product.category}
