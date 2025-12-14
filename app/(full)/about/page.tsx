@@ -15,6 +15,50 @@ export default function AboutPage() {
         dinners, and quiet nights in — bringing a soft, luminous presence to
         every moment.
       </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        VIVE JEWEL is a demi-fine jewelry brand built around color, energy, and
+        everyday ritual. Each gemstone is chosen to mirror a facet of your inner
+        world — courage, calm, focus, growth — so you can wear your intention
+        close, day after day.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        Our pieces are designed for modern women who move between meetings,
+        dinners, and quiet nights in — bringing a soft, luminous presence to
+        every moment.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        VIVE JEWEL is a demi-fine jewelry brand built around color, energy, and
+        everyday ritual. Each gemstone is chosen to mirror a facet of your inner
+        world — courage, calm, focus, growth — so you can wear your intention
+        close, day after day.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        Our pieces are designed for modern women who move between meetings,
+        dinners, and quiet nights in — bringing a soft, luminous presence to
+        every moment.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        VIVE JEWEL is a demi-fine jewelry brand built around color, energy, and
+        everyday ritual. Each gemstone is chosen to mirror a facet of your inner
+        world — courage, calm, focus, growth — so you can wear your intention
+        close, day after day.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        Our pieces are designed for modern women who move between meetings,
+        dinners, and quiet nights in — bringing a soft, luminous presence to
+        every moment.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        VIVE JEWEL is a demi-fine jewelry brand built around color, energy, and
+        everyday ritual. Each gemstone is chosen to mirror a facet of your inner
+        world — courage, calm, focus, growth — so you can wear your intention
+        close, day after day.
+      </p>
+      <p className="text-brand-purple/80 leading-relaxed">
+        Our pieces are designed for modern women who move between meetings,
+        dinners, and quiet nights in — bringing a soft, luminous presence to
+        every moment.
+      </p>
     </main>
   );
 }
