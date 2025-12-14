@@ -4,6 +4,8 @@ import "./globals.css";
 import Providers from "./Providers";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CartDrawer from "@/components/cart/CartDrawer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,9 +40,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased bg-brand-white text-brand-purple`}
       >
         <Providers>
-          <Navbar />
           {children}
-          <Footer />
+          <CartDrawer />
         </Providers>
       </body>
     </html>

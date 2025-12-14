@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-12">
-      <section className="space-y-4">
+    <main className="w-full px-6 lg:px-12 py-12">
+      <section className="max-w-4xl space-y-4">
         <p className="uppercase tracking-[0.25em] text-xs text-brand-gold">
           VIVE JEWEL
         </p>

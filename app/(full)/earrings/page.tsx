@@ -5,8 +5,8 @@ export default function EarringsPage() {
   const earrings = products.filter((p) => p.category === "earring");
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-12 space-y-6">
-      <div>
+    <main className="w-full px-6 lg:px-12 py-12 space-y-6">
+      <div className="max-w-3xl">
         <p className="text-xs uppercase tracking-[0.25em] text-brand-gold">
           Category
         </p>
